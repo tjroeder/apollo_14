@@ -1,0 +1,16 @@
+<h1>Astronauts Index</h1>
+<h2>Astronauts List</h2>
+<% @astronauts.each do |a| %>
+  <section id="astronaut-<%= a.id %>">
+    <p>Name: <%= a.name %>, Age: <%= a.age %>, Job: <%= a.job %>, Total Time in Space: <%= a.total_time %> days
+    <br>
+    <h3>Mission List:</h3>
+    <ul>
+      <% a.mission_order_alpha.each do |m| %>
+        <li><%= m.title %></li>
+      <% end %>
+    </ul>
+    </p>
+  </section>
+<% end %>
+<h2>Average Age: <%= @astronauts.average_age.truncate %></h2>
