@@ -8,7 +8,7 @@ describe Astronaut, type: :model do
   end
 
   describe 'Relationships' do
-    it { should have_many :astronaut_missions}
-    it { should have_many :missions}
+    it { should have_many :astronaut_missions }
+    it { should have_many(:missions).through(:astronaut_missions) }
   end
 end
